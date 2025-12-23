@@ -1,0 +1,67 @@
+{% extends "htmlFiles/base.html" %}
+
+{% block "container" %}
+
+  <div class="container">
+    <div class="chat-box">
+
+      <header class="chat-header">
+        <h2 class="logo">ChatMe <i class="fas fa-comments"></i></h2>
+        <div class="user-info">
+          <img src="{{user.pic.url}}" alt="" class="avatar">
+          <p>{{user.name}}</p>
+        </div>
+      </header>
+
+
+      <div class="messages-area">
+        <h3>Messages</h3>
+
+        {% for friend in friends %}
+
+        <a href="{% url 'detail' friend.profile.id %}"  >
+          <div class="message-card">
+            <img src="{{friend.profile.pic.url}}" alt="" class="avatar">
+            <div class="message-content">
+              <h4>{{friend.profile.name}}</h4>
+              <p>How are you doing today</p>
+            </div>
+            <div class="message-count"></div>
+          </div>
+        </a>
+
+        {% endfor %}
+
+      </div>
+
+      <footer class="foot">
+        <i class="fas fa-user"></i>
+        <i class="fas fa-home"></i>
+        <i class="fas fa-cog"></i>
+      </footer>
+
+    </div>
+  </div>
+
+  <script>
+    function notification(){
+      let url = "{% url 'notification' %}"
+
+      fetch(url)
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data)
+        let notBoxes = document.getElementsByClassName("message-count")
+        for (let i=0; i<data.length; i++){
+          notBoxes[i].innerText = data[i]
+        }
+      })
+      .catch(err => console.log(err))
+    }
+
+    setInterval(notification, 2000)
+
+  </script>
+
+
+{% endblock %}
