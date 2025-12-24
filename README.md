@@ -36,7 +36,7 @@ A real-time chat application built using **Django** that allows users to communi
 
 ### One to One chat
 
-<img src="screenshots/one-to-one chat" width=600 />
+<img src="screenshots/one-to-one.png" width=600 />
 
 ## 📦 Installation
 
