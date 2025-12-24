@@ -28,6 +28,10 @@ A real-time chat application built using **Django** that allows users to communi
 - WebSockets
 - Git & GitHub
 
+## 📸 Screenshots
+
+
+
 ## 📦 Installation
 
 Use the following code to run the project locally:
