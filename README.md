@@ -30,7 +30,13 @@ A real-time chat application built using **Django** that allows users to communi
 
 ## 📸 Screenshots
 
+### Index page
 
+<img src="screenshots/chat_index.png" width=600 />
+
+### One to One chat
+
+<img src="screenshots/one-to-one chat" width=600 />
 
 ## 📦 Installation
 
